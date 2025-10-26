@@ -1,0 +1,49 @@
+:root {
+    --text-teal:#B4C4D9;
+    --seagreen1:#013A40;
+    --seagreen2:#01403A;
+    --seagreen3:#025949;
+    --seagreen4:#027353;
+}
+#mission-div {
+    text-align: center;
+    padding:20px;
+}
+.aboutus-img {
+    display: block;
+    width:85%;
+    height:150px;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.aboutus-img img {
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+#why-div {
+    text-align: center;
+    padding: 20px;
+}
+
+@media only screen and (min-width: 700px) {
+    .aboutus-img {
+        width: 100%;
+        height:350px;
+        text-align: center;
+    }
+    .aboutus-img img {
+        width: 85%;
+    }
+    #mission-div p {
+        padding:30px;
+    }
+    #why-div p {
+        padding:30px;
+    }
+    #news-div p {
+        padding:30px;
+    }   
+}

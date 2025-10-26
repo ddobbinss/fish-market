@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../css/Home.css';
 import Fish from '../components/Fish.jsx';
 
@@ -22,7 +23,7 @@ export default function Home() {
         <h1 id="news-header">News & Announcents</h1>
         <div id="news-div">
             <p>This autumn, Exotic Imports is introducing a curated collection of seasonal exotics selected for their rarity, striking coloration, and compatibility with advanced aquaria. These limited offerings are ideal for dedicated aquarists looking to expand or refine their collections with species not typically available year-round.</p>
-            <a href="aboutus.html"><b>Read More</b></a> 
+            <Link to="/about" className="btn">Read More</Link> 
         </div>
     </div>
   );

@@ -1,3 +1,10 @@
+:root {
+    --text-teal:#B4C4D9;
+    --seagreen1:#013A40;
+    --seagreen2:#01403A;
+    --seagreen3:#025949;
+    --seagreen4:#027353;
+}
 #fish-nav {
     width: 100%;
     flex-direction: column;

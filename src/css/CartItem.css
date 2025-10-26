@@ -1,0 +1,30 @@
+.checkout-item {
+    display: flex;
+    border:solid 1px black;
+    width:60%;
+    margin:20px;
+    padding:10px;
+}
+.checkout-item img {
+    width:75px;
+    height: auto;
+}
+.checkout-item h1 {
+    margin:0;
+    font-size: 20px;
+}
+.item-qt , .item-price {
+    text-wrap: nowrap;
+    gap:5px;
+    margin-top: auto;
+}
+#cart-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#cart-confirm {
+    background:var(--seagreen2);
+    color:white;
+    padding:10px;
+}

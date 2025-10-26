@@ -1,5 +1,7 @@
 import React from 'react';
 import Fish from '../components/Fish.jsx';
+import '../css/Shop.css';
+
 export default function Shop() {
   return (
     <div id="content">
