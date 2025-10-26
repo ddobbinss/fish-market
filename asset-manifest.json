@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "./fish-market/static/css/main.39569091.css",
+    "main.js": "./fish-market/static/js/main.0cd97f03.js",
+    "static/media/fish1.png": "./fish-market/static/media/fish1.366bd456021efd5a8a09.png",
+    "static/media/header-nav.jpg": "./fish-market/static/media/header-nav.d29173bbcc5354bd14f1.jpg",
+    "static/media/header-backdrop.jpg": "./fish-market/static/media/header-backdrop.532d8dfcad66f4a07dfe.jpg",
+    "index.html": "./fish-market/index.html",
+    "main.39569091.css.map": "./fish-market/static/css/main.39569091.css.map",
+    "main.0cd97f03.js.map": "./fish-market/static/js/main.0cd97f03.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.39569091.css",
+    "static/js/main.0cd97f03.js"
+  ]
+}
