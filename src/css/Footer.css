@@ -1,0 +1,20 @@
+:root {
+    --text-teal:#B4C4D9;
+    --seagreen1:#013A40;
+    --seagreen2:#01403A;
+    --seagreen3:#025949;
+    --seagreen4:#027353;
+}
+footer {
+    margin-top:20px;
+    padding: 20px;
+    padding-left: 0%;
+    padding-right: 0%;
+    background:var(--seagreen2);
+    width: 100%;
+    text-align: center;
+}
+#footer-header {
+    font-size: 120%;
+    color:white;
+}

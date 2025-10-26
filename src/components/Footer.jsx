@@ -1,8 +1,8 @@
-import styles from './../css/Footer.css';
+import '../css/Footer.css';
 
 const Footer = () => {
     return (
-        <header id="footer-header">ddobbinss.github.io</header>
+        <footer id="footer-header">ddobbinss.github.io</footer>
     );
 };
 
