@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../css/Home.css';
 import Fish from '../components/Fish.jsx';
+import RefreshButton from '../components/RefreshButton.jsx';
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
             <iframe width="560" height="315" src="https://www.youtube.com/embed/Ky5JWS9WuYM?si=lqPNA-0oZjAlxBXG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         <h1>Featured Fish</h1>
+        <RefreshButton />
         <div id="featured-div" className="columns">   
             <Fish name="Mandarinfish" species="Synchiropus splendidus" region="Western Pacific" price="$150.00" />
             <Fish name="Clown Triggerfish" species="Balistoides conspicillum" region="Indo-Pacific" price="$200.00" />

@@ -1,15 +1,45 @@
 import React from 'react';
 import '../css/Faq.css';
+import {useState} from 'react';
 import FaqItem from '../components/FaqItem.jsx';
 
 
 export default function Faq() {
+
+    const [result, setResult] = useState("");
+
+        const onSubmit = async(event) => {
+            event.preventDefault();
+            setResult("Fishing for Response...");
+
+            const formData = new FormData(event.target);
+
+    
+            const response = await fetch("https://api.web3forms.com/submit", {
+                method: "POST",
+                body: formData
+            });
+
+            const data= await response.json();
+
+            if (data.success) {
+                setResult("Question Delivered.");
+                event.target.reset();
+            }
+            else {
+                console.log("error", data);
+                setResult(data.message);
+            }
+        }
+
+
+
   return (
     <div id="content">
                 <div id="faq-submit">
                     <h2>Have a Question?</h2>
                     <p>Contact Us</p>
-                    <form method="POST" id="faq-form">
+                    <form method="POST" id="faq-form" onSubmit={onSubmit}>
                         <input type="hidden" name="access_key" value="5219852a-c7b2-4b0b-bc51-2d2c10f9a505" />
                     
                                 <p>
@@ -31,7 +61,7 @@ export default function Faq() {
 
                         <p><button type="submit">Submit</button></p>
 
-                        <div id="contact-result"></div>
+                        <div id="contact-result">{result}</div>
                     </form>
 
                 </div>  

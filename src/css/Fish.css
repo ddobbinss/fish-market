@@ -5,14 +5,16 @@
     --seagreen3:#025949;
     --seagreen4:#027353;
 }
+
 .fish-item  {
     padding: 35px;
-    width:250px; /*CHANGES THE SIZE OF THE FISH CARD */
+    width:250px; /* CHANGES THE SIZE OF THE FISH CARD */
     margin:15px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     text-align: center;
     flex-wrap: wrap;
 }
+
 .a-fish-item {
     padding:20px;
     margin:0;
@@ -21,6 +23,7 @@
     text-decoration: none;
     color:black;
 }
+
 .fish-item img {
     max-width: 100%;
     height: 200px;
@@ -29,10 +32,12 @@
     display: block;
     margin: 0 auto 10px;
 }
+
 .fish-region , .fish-price {
     margin:5px 0;
     font-size: 24px;
 }
+
 .btn-cart {
     display:flex;
     margin:0 auto;
@@ -44,4 +49,72 @@
 }
 .btn-cart:hover {
     background:darkgreen;
+}
+
+
+/*POPUP*/
+
+
+.popup-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#fish-popup-content {
+    background: #ffffff;
+    color: #000000;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    position: relative;
+}
+
+#close-popup {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 32px;
+    color: #333;
+    cursor: pointer;
+    transition: 0.2s;
+}
+#close-popup:hover {
+    color: var(--seagreen3);
+}
+
+#popup-img {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+#popup-name {
+    font-size: 30px;
+    margin-bottom: 5px;
+    color: var(--seagreen1);
+}
+
+#popup-species {
+    font-size: 22px;
+    color: var(--seagreen4);
+    margin-bottom: 10px;
+}
+
+#popup-region,
+#popup-price,
+#popup-description {
+    font-size: 18px;
+    margin: 6px 0;
 }
