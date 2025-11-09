@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import '../css/Fish.css';
-import fishPic from './../images/fish1.png';
 
 const Fish = (props) => {
 
@@ -13,7 +12,7 @@ const Fish = (props) => {
     
     <div>
         <section className="fish-item" onClick={openPopup}>
-            <img src={fishPic} alt={props.name} />
+            <img src={"https://fish-server-i3ie.onrender.com/"+props.fishPic} alt={props.name} />
             <h1>{props.name}</h1>
             <h2>{props.species}</h2>
             <p className="fish-region">{props.region}</p>
@@ -29,7 +28,7 @@ const Fish = (props) => {
             </button>
 
             {/* fish info*/}
-            <img id="popup-img" src={fishPic} alt={props.name} />
+            <img id="popup-img" src={"https://fish-server-i3ie.onrender.com/"+props.fishPic} alt={props.name} />
             <h1 id="popup-name">{props.name}</h1>
             <h2 id="popup-species">{props.species}</h2>
             <p id="popup-region">{props.region}</p>

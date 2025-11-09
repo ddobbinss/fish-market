@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import '../css/Home.css';
 import Fish from '../components/Fish.jsx';
 import RefreshButton from '../components/RefreshButton.jsx';
+import FishList from '../components/FishList.jsx';
+
 
 export default function Home() {
   return (
