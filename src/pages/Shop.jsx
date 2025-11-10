@@ -1,9 +1,9 @@
 import React from 'react';
-import Fish from '../components/Fish.jsx';
+import axios from "axios";
 import '../css/Shop.css';
 import FishList from '../components/FishList.jsx';
 
-export default function Shop() {
+const Shop = () =>{
   return (
     <div id="content">
         <div id="fish-nav">
@@ -12,8 +12,10 @@ export default function Shop() {
         </div>
         
         <div id="fish-div">
-            <FishList />
+            <FishList num="9"/>
         </div>
     </div>
   );
 };
+
+export default Shop;

@@ -4,8 +4,6 @@ import '../css/Home.css';
 import Fish from '../components/Fish.jsx';
 import RefreshButton from '../components/RefreshButton.jsx';
 import FishList from '../components/FishList.jsx';
-import FeaturedFish from '../components/FeaturedFish.jsx';
-
 
 export default function Home() {
   return (
@@ -20,10 +18,7 @@ export default function Home() {
         <h1>Featured Fish</h1>
         <RefreshButton />
         <div id="featured-div" className="columns">   
-            <FishList>
-                <FeaturedFish/>
-            </FishList>
-        
+            // FISH NEEDS FESTURED 
         </div>
         <h1 id="news-header">News & Announcents</h1>
         <div id="news-div">

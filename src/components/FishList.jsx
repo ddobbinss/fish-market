@@ -2,30 +2,22 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './../css/Fish.css';
 import Fish from './Fish.jsx';
-import {FishContext} from './FishContext.jsx';
 
 
-const FishList = ({ num, showList = true, children }) => {
+const FishList = (props) => {
   const [fishes, setFishes] = useState([]);
 
   useEffect(() => {
     const loadFishes = async () => {
-      try {
-        const res = await axios.get('/api/fishes'); 
-        const list = Array.isArray(res.data) ? res.data : [];
-        setFishes(num ? list.slice(0, num) : list);   // keep original order
-      } catch (err) {
-        console.error('Error loading fish:', err);
-        setFishes([]);
-      }
+      const response = await axios.get('https://fish-server-i3ie.onrender.com/api/fishes');
+      setFishes(response.data.splice(0,props.num));
     };
     loadFishes();
-  }, [num]);
+  }, []);
 
   return (
     <div id="fish-list" className="columns">
-      <FishContext.Provider value={fishes}>
-        {showList && fishes.map((fishItem) => (
+        {fishes.map((fishItem) => (
           <Fish
             key={fishItem._id}
             name={fishItem.name}
@@ -36,8 +28,6 @@ const FishList = ({ num, showList = true, children }) => {
             fishPic={fishItem.image}
           />
         ))}
-        {children}
-      </FishContext.Provider>
     </div>
   );
 };

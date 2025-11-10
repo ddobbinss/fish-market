@@ -22,9 +22,14 @@
 }
 
 @media only screen and (min-width: 700px) {
-    #fish-nav {
+    .columns {
         display: flex;
         gap:20px;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    #fish-nav {
+        display: flex;
         justify-content: center;
         width:100%;
         flex-direction: row;
