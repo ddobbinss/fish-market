@@ -10,10 +10,12 @@ const FishList = (props) => {
   useEffect(() => {
     const loadFishes = async () => {
       const response = await axios.get('https://fish-server-i3ie.onrender.com/api/fishes');
-      setFishes(response.data.splice(0,props.num));
+      setFishes(response.data);
     };
     loadFishes();
   }, []);
+
+
 
   return (
     <div id="fish-list" className="columns">

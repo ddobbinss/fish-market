@@ -3,9 +3,15 @@ import { Link } from 'react-router-dom';
 import '../css/Home.css';
 import Fish from '../components/Fish.jsx';
 import RefreshButton from '../components/RefreshButton.jsx';
-import FishList from '../components/FishList.jsx';
-
+import FeaturedFish from '../components/FeaturedFish.jsx';
 export default function Home() {
+
+    const [refreshKey, setRefreshKey] = React.useState(0);  
+
+    const handleRefresh = () => {
+        setRefreshKey(refreshKey + 1);
+    }
+    
   return (
     <div id="content">
         <div id="mission-div">
@@ -16,9 +22,9 @@ export default function Home() {
             <iframe width="560" height="315" src="https://www.youtube.com/embed/Ky5JWS9WuYM?si=lqPNA-0oZjAlxBXG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </div>
         <h1>Featured Fish</h1>
-        <RefreshButton />
+        <RefreshButton onClick={handleRefresh}/>
         <div id="featured-div" className="columns">   
-            // FISH NEEDS FESTURED 
+            <FeaturedFish key={refreshKey}/>
         </div>
         <h1 id="news-header">News & Announcents</h1>
         <div id="news-div">
