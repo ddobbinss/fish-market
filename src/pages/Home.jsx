@@ -4,6 +4,7 @@ import '../css/Home.css';
 import Fish from '../components/Fish.jsx';
 import RefreshButton from '../components/RefreshButton.jsx';
 import FishList from '../components/FishList.jsx';
+import FeaturedFish from '../components/FeaturedFish.jsx';
 
 
 export default function Home() {
@@ -19,9 +20,9 @@ export default function Home() {
         <h1>Featured Fish</h1>
         <RefreshButton />
         <div id="featured-div" className="columns">   
-            <Fish name="Mandarinfish" species="Synchiropus splendidus" region="Western Pacific" price="$150.00" />
-            <Fish name="Clown Triggerfish" species="Balistoides conspicillum" region="Indo-Pacific" price="$200.00" />
-            <Fish name="Royal Gramma" species="Gramma loreto" region="Caribbean Sea" price="$80.00" />        
+            <FishList>
+                <FeaturedFish/>
+            </FishList>
         
         </div>
         <h1 id="news-header">News & Announcents</h1>
@@ -31,4 +32,4 @@ export default function Home() {
         </div>
     </div>
   );
-}
+};

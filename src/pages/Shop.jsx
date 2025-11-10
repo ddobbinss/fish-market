@@ -1,6 +1,7 @@
 import React from 'react';
 import Fish from '../components/Fish.jsx';
 import '../css/Shop.css';
+import FishList from '../components/FishList.jsx';
 
 export default function Shop() {
   return (
@@ -11,9 +12,7 @@ export default function Shop() {
         </div>
         
         <div id="fish-div">
-                <Fish name="Mandarinfish" species="Synchiropus splendidus" region="Western Pacific" price="$150.00" />
-                <Fish name="Clown Triggerfish" species="Balistoides conspicillum" region="Indo-Pacific" price="$200.00" />
-                <Fish name="Royal Gramma" species="Gramma loreto" region="Caribbean Sea" price="$80.00" /> 
+            <FishList />
         </div>
     </div>
   );
