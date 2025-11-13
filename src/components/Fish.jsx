@@ -33,9 +33,7 @@ const Fish = (props) => {
             <h2 id="popup-species">{props.species}</h2>
             <p id="popup-region">{props.region}</p>
             <h3 id="popup-price">{props.price}</h3>
-            <p id="popup-description">
-                {props.info || "This is one of our featured fish, great fish."}
-            </p>
+            <p id="popup-description">{props.description}</p>
             <button className="btn-cart">Add To Cart</button>
         </div>
     </div>)}

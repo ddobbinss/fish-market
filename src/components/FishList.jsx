@@ -26,7 +26,7 @@ const FishList = (props) => {
             species={fishItem.species}
             region={fishItem.region}
             price={fishItem.price}
-            info={fishItem.description}
+            description={fishItem.description}
             fishPic={fishItem.image}
           />
         ))}
