@@ -1,0 +1,112 @@
+/*portions of css adapted from gpt && w3schools */
+#add-fish {
+    position: fixed;
+    inset: 0; 
+    background: rgba(0, 0, 0, 0.7); /* darken background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000; /* above the rest of the page */
+}
+
+
+#add-fish .w3-modal-content {
+    background: var(--seagreen1);
+    color: white;
+    max-width: 600px;
+    width: 90%;
+    border-radius: 12px;
+    padding: 20px 24px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+    max-height: 90vh;        /* never goes off-screen */
+    overflow-y: auto;        /* scroll inside if form is tall */
+}
+
+/* Inner container */
+#add-fish .w3-container {
+    padding: 0;
+}
+
+/* Close (X) button */
+#add-fish-close {
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    border: none;
+    background: none;
+    color: var(--text-teal);
+}
+
+#add-fish-close:hover {
+    color: white;
+}
+
+/* Form styling */
+#add-fish-form {
+    margin-top: 10px;
+}
+
+#add-fish-form h3 {
+    margin-bottom: 15px;
+    text-align: center;
+    color: var(--text-teal);
+}
+
+#add-fish-form p {
+    margin: 10px 0;
+}
+
+/* Inputs */
+#add-fish-form label {
+    display: block;
+    margin-bottom: 4px;
+}
+
+#add-fish-form input[type="text"],
+#add-fish-form input[type="number"],
+#add-fish-form input[type="file"] {
+    width: 100%;
+    padding: 8px 10px;
+    border-radius: 6px;
+    border: 1px solid var(--seagreen3);
+    background: white;
+    color: black;
+    box-sizing: border-box;
+}
+
+/* Preview image + upload section */
+#img-prev-section {
+    text-align: center;
+}
+
+#img-prev {
+    max-width: 150px;
+    max-height: 150px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Submit button */
+#add-fish-form button[type="submit"] {
+    background: var(--seagreen3);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: block;
+    margin: 10px auto 0 auto;
+}
+
+#add-fish-form button[type="submit"]:hover {
+    background: var(--seagreen4);
+}
+
+/*  larger screens */
+@media only screen and (min-width: 700px) {
+    #add-fish .w3-modal-content {
+        width: 500px;
+    }
+}

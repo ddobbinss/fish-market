@@ -2,7 +2,7 @@ import "../css/AddFish.css";
 import { use, useState } from "react";
 import axios from "axios";
 
-const AddFish = () => {
+const AddFish = (props) => {
     const [result, setResult] = useState("");
     const [prevSrc, setPrevSrc] = useState("");
 
@@ -15,7 +15,7 @@ const AddFish = () => {
         setResult("Sending...");
 
         const formData = new FormData(event.target);
-        console.log(...formdata);
+        console.log(...formData);
 
         //make render fetch render link when done 
         const response = await fetch('http://localhost:3001/api/fishes', {
@@ -26,8 +26,8 @@ const AddFish = () => {
         if(response.status == 200) {
             setResult("Fish added to the Tank");
             event.target.reset();
-            Props.closeAddDialog();
-            Props.updateFishes(await response.json());
+            props.closeAddDialog();
+            props.updateFishes(await response.json());
         }
         else {
             setResult("Error adding fish");
@@ -36,31 +36,35 @@ const AddFish = () => {
 
     //temp template from portia 
     return (
-        <div id="add-dialog" className="w3-modal">
+        <div id="add-fish" className="w3-modal">
             <div className="w3-modal-content">
                 <div className="w3-container">
-                    <span id="dialog-close" className="w3-button w3-display-topright" onClick={props.closeAddDialog}>&times;</span>
-                    <form id="add-property-form" onSubmit={addToServer}>
-                        <h3>Create New Property</h3>
+                    <span id="add-fish-close" className="w3-button w3-display-topright" onClick={props.closeAddFish}>&times;</span>
+                    <form id="add-fish-form" onSubmit={addToServer}>
+                        <h3>Sell A Fish</h3>
 
                         <p>
-                            <label htmlFor="name">Property Name:</label>
+                            <label htmlFor="name">Fish Name:</label>
                             <input type="text" id="name" name="name" required min="3"></input>
                         </p>
 
                         <p>
-                            <label htmlFor="size">Size:</label>
-                            <input type="number" id="size" name="size" min="0" required></input>
+                            <label htmlFor="species">Fish Species:</label>
+                            <input type="text" id="species" name="species" min="1" required></input>
                         </p>
 
                         <p>
-                            <label htmlFor="bedrooms">Bedrooms:</label>
-                            <input type="number" id="bedrooms" name="bedrooms" min="0" required></input>
+                            <label htmlFor="region">Region: </label>
+                            <input type="text" id="region" name="region" min="1" required></input>
                         </p>
 
                         <p>
-                            <label htmlFor="bathrooms">Bathrooms:</label>
-                            <input type="number" id="bathrooms" name="bathrooms" min="0" required></input>
+                            <label htmlFor="price">Price: $</label>
+                            <input type="number" id="price" name="price" min="1" required></input>
+                        </p>
+                        <p>
+                            <label htmlFor="description">Description:</label>
+                            <input type="text" id="description" name="description" min="1" required></input>
                         </p>
 
                         <section className="columns">
