@@ -1,13 +1,14 @@
 import "../css/AddFish.css";
-import { use, useState } from "react";
-import axios from "axios";
+import {useState} from "react";
 
 const AddFish = (props) => {
     const [result, setResult] = useState("");
     const [prevSrc, setPrevSrc] = useState("");
 
     const uploadImage = (event) => {
-        setPrevSrc(URL.createObjectURL(event.target.files[0]));
+        const file = event.target.files && event.target.files[0];
+        if (!file) return;
+        setPrevSrc(URL.createObjectURL(file));    
     };
 
     const addToServer = async(event) => {
@@ -23,10 +24,10 @@ const AddFish = (props) => {
             body: formData
         }); 
 
-        if(response.status == 200) {
+        if(response.status === 200) {
             setResult("Fish added to the Tank");
             event.target.reset();
-            props.closeAddDialog();
+            props.closeAddFish();
             props.updateFishes(await response.json());
         }
         else {
@@ -54,8 +55,12 @@ const AddFish = (props) => {
                         </p>
 
                         <p>
-                            <label htmlFor="region">Region: </label>
-                            <input type="text" id="region" name="region" min="1" required></input>
+                            <label htmlFor="region">Region:</label>
+                            <select id="region" name="region" required>
+                                <option value="">Select region</option>
+                                <option value="freshwater">Freshwater</option>
+                                <option value="saltwater">Saltwater</option>
+                            </select>
                         </p>
 
                         <p>
@@ -70,15 +75,15 @@ const AddFish = (props) => {
                         <section className="columns">
                             <div>
                                 <p id="img-prev-section">
-                                    {prevSrc!=""?
+                                    {prevSrc!==""?
                                     (<img id="img-prev" src={prevSrc}></img>):
                                     ("")
                                     }
                                 </p>
                             </div>
                             <p id="img-upload">
-                                <label htmlFor="img">Upload Image:</label>
-                                <input type="file" id="img" name="img" accept="image/*" onChange={uploadImage} />
+                                <label htmlFor="image">Upload Image:</label>
+                                <input type="file" id="image" name="image" accept="image/*" onChange={uploadImage} />
                             </p>
                         </section>
 

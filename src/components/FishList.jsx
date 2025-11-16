@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './../css/Fish.css';
-import Fish from './Fish.jsx';
-
+import Fish from '../components/Fish';
 
 const FishList = (props) => {
   const [fishes, setFishes] = useState([]);
+
+  
 
   useEffect(() => {
     const loadFishes = async () => {
@@ -18,6 +19,7 @@ const FishList = (props) => {
 
 
   return (
+    
     <div id="fish-list" className="columns">
         {fishes.map((fishItem) => (
           <Fish

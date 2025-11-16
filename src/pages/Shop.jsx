@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../css/Shop.css';
 import Fish from '../components/Fish.jsx';
-import AddFish from '../components/AddFish.jsx';
+import AddFish from '../components/AddFish';
 
 const Shop = () => {
   const [fishes, setFishes] = useState([]);
@@ -10,12 +10,25 @@ const Shop = () => {
   const [activeFilter, setActiveFilter] = useState('all'); // 'all' | 'freshwater' | 'saltwater'
   const [showAddFish, setShowAddFish] = useState(false);
 
+  const openAddFish = () => {
+    setShowAddFish(true);
+  };
+
+  const closeAddFish = () => {
+    setShowAddFish(false);
+  };
+
+  const updateFishes = (fish) => {
+    setFishes((fishes) => [...fishes, fish]);
+  };
+  
+
   // Load fish once
   useEffect(() => {
     const loadFishes = async () => {
       try {
-        //const response = await axios.get('https://fish-server-i3ie.onrender.com/api/fishes');
-        const response = await axios.get('http://localhost:3001/api/fishes');
+        const response = await axios.get('https://fish-server-i3ie.onrender.com/api/fishes');
+        //const response = await axios.get('http://localhost:3001/api/fishes');
         const data = Array.isArray(response.data) ? response.data : [];
         setAllFish(data);
         setFishes(data);
@@ -26,13 +39,8 @@ const Shop = () => {
     loadFishes();
   }, []);
 
-  const openAddFish = () => {
-    setShowAddFish(true);
-  };
-
-  const closeAddFish = () => {
-    setShowAddFish(false);
-  };
+  
+  
 
   //Freshwater filter
   const showFreshwater = () => {
@@ -64,13 +72,12 @@ const Shop = () => {
 
   return (
     <div id="content">
-      
+
       <button id="btn-add-fish" onClick={openAddFish}>Sell A Fish</button>
       {showAddFish && (<AddFish 
       closeAddFish={closeAddFish}
-      closeAddDialog={closeAddFish}/>
+      updateFishes={updateFishes}/>
       )};
-
 
       <div id="fish-nav">
         <button

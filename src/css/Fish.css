@@ -118,3 +118,13 @@
     font-size: 18px;
     margin: 6px 0;
 }
+#btn-add-fish {
+    background: var(--seagreen3);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 20px;
+    margin: 20px auto;
+    display: block;
+    cursor: pointer;
+}

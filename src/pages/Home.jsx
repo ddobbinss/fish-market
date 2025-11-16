@@ -19,7 +19,7 @@ export default function Home() {
             <p>At Exotic Imports, our mission is to share the vibrant beauty of the underwater world with aquarists everywhere. We specialize in bringing rare and responsibly sourced exotic fish to your aquarium, ensuring every species is healthy, sustainable, and ethically cared for. Beyond just offering fish, we provide expert guidance and resources so that every customer — from beginner hobbyists to seasoned collectors</p>
         </div>
         <div id="img-banner">
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/Ky5JWS9WuYM?si=lqPNA-0oZjAlxBXG" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Ky5JWS9WuYM?si=lqPNA-0oZjAlxBXG" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
         </div>
         <h1>Featured Fish</h1>
         <RefreshButton onClick={handleRefresh}/>

@@ -16,7 +16,7 @@ const Fish = (props) => {
             <h1>{props.name}</h1>
             <h2>{props.species}</h2>
             <p className="fish-region">{props.region}</p>
-            <p className="fish-price">{props.price}</p>
+            <p className="fish-price">${props.price}</p>
             <button className="btn-cart">Add To Cart</button>
         </section>
 
@@ -32,7 +32,7 @@ const Fish = (props) => {
             <h1 id="popup-name">{props.name}</h1>
             <h2 id="popup-species">{props.species}</h2>
             <p id="popup-region">{props.region}</p>
-            <h3 id="popup-price">{props.price}</h3>
+            <h3 id="popup-price">${props.price}</h3>
             <p id="popup-description">{props.description}</p>
             <button className="btn-cart">Add To Cart</button>
         </div>
