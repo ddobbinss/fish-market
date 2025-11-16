@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../css/Home.css';
-import Fish from '../components/Fish.jsx';
 import RefreshButton from '../components/RefreshButton.jsx';
 import FeaturedFish from '../components/FeaturedFish.jsx';
 export default function Home() {
