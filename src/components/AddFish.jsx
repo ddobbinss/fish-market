@@ -19,8 +19,8 @@ const AddFish = (props) => {
         console.log(...formData);
 
         //make render fetch render link when done 
-        const response = await fetch('http://localhost:3001/api/fishes', {
-            method: 'POST',
+        //const response = await fetch('http://localhost:3001/api/fishes', {
+        const response = await fetch('https://fish-server-i3ie.onrender.com/api/fishes', {
             body: formData
         }); 
 
