@@ -3,10 +3,15 @@ import '../css/Fish.css';
 
 const Fish = (props) => {
 
-    const [popupOpen, setPopupOpen] = useState(false);   
+    const [fish, setFish] = useState(props);
+    const [showFish, setShowFish] = useState(true); //FISH ITEM
+    const [popupOpen, setPopupOpen] = useState(false); //FISH POPUP 
     
     const openPopup = () => setPopupOpen(true);
     const closePopup = () => setPopupOpen(false);
+    const updateFish = (fish) => setFish(fish); 
+    const hideFish = () => setShowFish(false);
+
 
     return (
     
