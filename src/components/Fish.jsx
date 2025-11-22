@@ -1,22 +1,38 @@
 import React, {useState} from 'react';
 import '../css/Fish.css';
+import FishDialog from './FishDialog.jsx';
 
 const Fish = (props) => {
 
     const [fish, setFish] = useState(props);
     const [showFish, setShowFish] = useState(true); //FISH ITEM
-    const [popupOpen, setPopupOpen] = useState(false); //FISH POPUP 
+    const [showDialog, setShowDialog] = useState(false); //FISH POPUP 
     
-    const openPopup = () => setPopupOpen(true);
-    const closePopup = () => setPopupOpen(false);
-    const updateFish = (fish) => setFish(fish); 
+    const showFishDetails = () => setShowDialog(true); //popup function
+    const closeFishDetails = () => setShowDialog(false);
+
+    const updateFish = (fish) => setFish(fish); //fish itself function 
     const hideFish = () => setShowFish(false);
 
 
     return (
-    
-    <div>
-        <section className="fish-item" onClick={openPopup}>
+    <>
+    {showDialog?(
+        <FishDialog closeFishDialog={closeFishDetails}
+            _id={props._id}
+            name={props.name}
+            species={props.species}
+            region={props.region}
+            price={props.price}
+            description={props.description}
+            fishPic={props.fishPic}
+            updateFish={updateFish}
+            hideFish={hideFish}
+        />
+    ):("")}
+
+    {showFish?(
+        <section className="fish-item" onClick={showFishDetails}>
             <img src={"https://fish-server-i3ie.onrender.com/"+props.fishPic} alt={props.name} />
             <h1>{props.name}</h1>
             <h2>{props.species}</h2>
@@ -24,28 +40,10 @@ const Fish = (props) => {
             <p className="fish-price">${props.price}</p>
             <button className="btn-cart">Add To Cart</button>
         </section>
-
-        {/* Popup fo fish  */}
-        {popupOpen && (<div className="popup-backdrop" onClick={(e) => e.stopPropagation()}>
-          <div id="fish-popup-content">
-            <button id="close-popup" onClick={closePopup}>
-              &times;
-            </button>
-
-            {/* fish info*/}
-            <img id="popup-img" src={"https://fish-server-i3ie.onrender.com/"+props.fishPic} alt={props.name} />
-            <h1 id="popup-name">{props.name}</h1>
-            <h2 id="popup-species">{props.species}</h2>
-            <p id="popup-region">{props.region}</p>
-            <h3 id="popup-price">${props.price}</h3>
-            <p id="popup-description">{props.description}</p>
-            <button className="btn-cart">Add To Cart</button>
-        </div>
-    </div>)}
-</div>
-        
-
-    );
+    ):("")};
+    
+    </>
+    )
 };
 
 export default Fish;
