@@ -1,16 +1,16 @@
 //APPPEND TO FISH ITME HIDDEN POPUP
-import react, {useState} from 'react';
+import React, {useState} from 'react';
 
 const FishDelete = (props) => { 
     const [result, setResult] = useState("");
 
     const deleteFish = async() => {
-        const response = await fetch('http://localhost:3001/api/fishes/' + props._id, {
-        //const response = await fetch('https://fish-server-i3ie.onrender.com/api/fishes/' + props._id, {
+        //const response = await fetch(`http://localhost:3001/api/fishes/${props._id}`, {
+        const response = await fetch('https://fish-server-i3ie.onrender.com/api/fishes/' + props._id, {
             method: 'DELETE'
         });
 
-        if(response === 200) {
+        if(response.status === 200) {
             setResult("Fish Deleted!")
             props.closeDeleteDialog();
             props.hideFish();

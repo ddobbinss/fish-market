@@ -8,8 +8,8 @@ const FeaturedFish = (props) => {
 
   useEffect(() => {
     const loadFishes = async () => {   
-      //const response = await axios.get('https://fish-server-i3ie.onrender.com/api/fishes');
-      const response = await axios.get('http://localhost:3001/api/fishes');
+      const response = await axios.get('https://fish-server-i3ie.onrender.com/api/fishes');
+      //const response = await axios.get('http://localhost:3001/api/fishes');
       const data = response.data;
       const selected = [];
 
@@ -34,6 +34,7 @@ const FeaturedFish = (props) => {
       {fishes.map((fishItem) => (
         <Fish
           key={fishItem._id}
+          _id={fishItem._id}
           name={fishItem.name}
           species={fishItem.species}
           region={fishItem.region}

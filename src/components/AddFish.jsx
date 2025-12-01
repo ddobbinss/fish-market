@@ -19,8 +19,8 @@ const AddFish = (props) => {
         console.log(...formData);
 
         //make render fetch render link when done 
-        const response = await fetch('http://localhost:3001/api/fishes', {
-        //const response = await fetch('https://fish-server-i3ie.onrender.com/api/fishes', {
+        //const response = await fetch('http://localhost:3001/api/fishes', {
+        const response = await fetch('https://fish-server-i3ie.onrender.com/api/fishes', {
             method: 'POST',
             body: formData
         }); 
@@ -36,7 +36,7 @@ const AddFish = (props) => {
         }
     };
 
-    //temp template from portia 
+    
     return (
         <div id="add-fish" className="w3-modal">
             <div className="w3-modal-content">

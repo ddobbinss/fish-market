@@ -19,13 +19,13 @@ const Fish = (props) => {
     <>
     {showDialog?(
         <FishDialog closeFishDialog={closeFishDetails}
-            _id={props._id}
-            name={props.name}
-            species={props.species}
-            region={props.region}
-            price={props.price}
-            description={props.description}
-            fishPic={props.fishPic}
+            _id={fish._id}
+            name={fish.name}
+            species={fish.species}
+            region={fish.region}
+            price={fish.price}
+            description={fish.description}
+            fishPic={fish.fishPic}
             updateFish={updateFish}
             hideFish={hideFish}
         />

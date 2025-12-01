@@ -47,14 +47,14 @@ const FishDialog = (props) => {
                                 price={props.price}
                                 description={props.description}
                                 fishPic={props.fishPic} 
-                                closeFishPopup={props.closeFishPopup}
+                                closeEditDialog={props.closeFishDialog}
                                 updateFish={props.updateFish}
                                 />
                         ):(
                             <FishDelete 
                                _id={props._id}
                                name={props.name}
-                               closeFishPopup={props.closeFishPopup}
+                               closeDeleteDialog={props.closeFishDialog}
                                hideFish={props.hideFish}
                                />
                             )}

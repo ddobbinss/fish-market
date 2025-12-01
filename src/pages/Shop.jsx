@@ -102,6 +102,7 @@ const Shop = () => {
         {fishes.map((fishItem) => (
           <Fish
             key={fishItem._id}
+            _id={fishItem._id}
             name={fishItem.name}
             species={fishItem.species}
             region={fishItem.region}
