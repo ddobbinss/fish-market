@@ -230,7 +230,7 @@
 }
 
 #add-fish-form label {
-    color: var(--seagreen2);
+    color: var(--text-teal);
     font-weight: 600;
     margin-bottom: 5px;
 }
