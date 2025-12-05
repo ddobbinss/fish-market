@@ -101,7 +101,6 @@ const Shop = () => {
       <div id="fish-div" className="columns">
         {fishes.map((fishItem) => (
           <Fish
-            key={fishItem._id}
             _id={fishItem._id}
             name={fishItem.name}
             species={fishItem.species}
