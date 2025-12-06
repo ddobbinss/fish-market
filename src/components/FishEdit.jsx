@@ -27,8 +27,8 @@ const FishEdit = (props) => {
         if (response.status === 200) {
             setResult("Fish updated");
             event.target.reset();
-            props.closeEditDialog();
-            props.updateFish(await response.json());
+            const updatedData = await response.json();
+            props.updateFish({ ...updatedData, _id: props._id });
         } else {
             setResult("Error updating fish");
         }

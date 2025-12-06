@@ -77,7 +77,7 @@ const Shop = () => {
       {showAddFish && (<AddFish 
       closeAddFish={closeAddFish}
       updateFishes={updateFishes}/>
-      )};
+      )}
 
       <div id="fish-nav">
         <button
@@ -99,8 +99,9 @@ const Shop = () => {
       
 
       <div id="fish-div" className="columns">
-        {fishes.map((fishItem) => (
+        {fishes.map((fishItem, index) => (
           <Fish
+            key={fishItem._id || index}
             _id={fishItem._id}
             name={fishItem.name}
             species={fishItem.species}

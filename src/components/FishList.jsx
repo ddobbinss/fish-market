@@ -25,6 +25,7 @@ const FishList = (props) => {
     <div id="fish-list" className="columns">
         {fishes.map((fishItem) => (
           <Fish
+            key={fishItem._id}
             _id={fishItem._id}
             name={fishItem.name}
             species={fishItem.species}

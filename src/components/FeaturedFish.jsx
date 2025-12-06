@@ -42,7 +42,7 @@ const FeaturedFish = (props) => {
           description={fishItem.description}
           fishPic={fishItem.image}
         />
-      ))};
+      ))}
     </div>
   );
 };

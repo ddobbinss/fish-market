@@ -6,7 +6,7 @@ const FishDelete = (props) => {
 
     const deleteFish = async() => {
         //const response = await fetch(`http://localhost:3001/api/fishes/${props._id}`, {
-        const response = await fetch('https://fish-server-i3ie.onrender.com/api/fishes/' + props._id, {
+        const response = await fetch(`https://fish-server-i3ie.onrender.com/api/fishes/${props._id}`, {
             method: 'DELETE'
         });
 
